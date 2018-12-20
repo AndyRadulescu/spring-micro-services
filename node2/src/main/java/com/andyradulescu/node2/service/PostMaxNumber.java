@@ -6,7 +6,8 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class PostMaxNumber {
     public String postToOtherBackend(double value) {
-        final String uri = "http://localhost:8083/number";
+//        URI uri = fromUriString("maxbetween3numbers3-backends_node3_1://node2:8083").path("/number").build().toUri();
+        final String uri = "http://node3:8083/number";
 
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForObject(uri, String.valueOf(value), String.class);

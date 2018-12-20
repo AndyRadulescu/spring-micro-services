@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DockerEnvironmentVariable {
-    @Value("${DOCKER_ENV_VARIABLE:0}")
-    private String docker_env_variable;
+    @Value("${NUMBER:0}")
+    private String number;
 
     @GetMapping(value = "/docker-env")
     public String getDockerEnvironmentVariable() {
-        return docker_env_variable;
+        return number;
     }
 }

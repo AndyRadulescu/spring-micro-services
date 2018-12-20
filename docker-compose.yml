@@ -1,18 +1,26 @@
 version: "3"
 services:
-  web:
+  entry:
     # replace username/repo:tag with your name and image details
-    image: username/repo:tag
-    deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
+    image: andyradulescu1/entry:v13
     ports:
-      - "80:80"
+      - "8081:8081"
+    networks:
+      - webnet
+  node2:
+    image: andyradulescu1/node2:v13
+    ports:
+      - "8082:8082"
+    environment:
+     - NUMBER=72
+    networks:
+      - webnet
+  node3:
+    image: andyradulescu1/node3:v13
+    ports:
+      - "8083:8083"
+    environment:
+     - NUMBER=113
     networks:
       - webnet
 networks:
