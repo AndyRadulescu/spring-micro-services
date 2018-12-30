@@ -10,5 +10,5 @@ Tha app as a scheme looks like this:
 EntryNode -> Node2 -> Node3. Each node will return the max number to the previus node (ex: Node3-> Node2 -> EntryNode). The result will 
 be shown.
 
-To start the calculation: access http://localhost:8081/number/{your first number} (GET).
+To start the calculation: access http://localhost:8081/number/ {your first number} (GET).
 To change the numbers that fallow to be calculated change {yout first number}, and the ENV variables **NUMBER** in the docker-compose.yml
